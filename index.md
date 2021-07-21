@@ -7,7 +7,11 @@
 
 ### Specification Language
 
-This webpage will be updated over time to include the formal SemGuS format as well as links to benchmarks and solvers for SemGuS problems.
+[Information about the v1.0 formal SemGuS format.](language)
+
+### Benchmarks and Solvers
+
+Links to benchmarks and solvers for SemGuS problems coming soon.
 
 In the meantime, you can read the [paper](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf) or watch the [talks](https://app.clowdr.org/conference/popl2021/item/5b50bd98-0c54-4733-866d-5a81a26a23e9) about SemGuS. 
 
@@ -19,5 +23,11 @@ In the meantime, you can read the [paper](https://pages.cs.wisc.edu/~loris/paper
 
 - [Jinwoo Kim](mailto:pl@cs.wisc.edu) (lead) (UW-Madison)
 - [Qinheping Hu](mailto:qhu28@cs.wisc.edu) (UW-Madison)
+- [Wiley Corning](mailto:wcorning@wisc.edu) (UW-Madison)
+- [Keith Johnson](mailto:keith.johnson@wisc.edu) (UW-Madison)
+- [Julien De Castelnau](decastelnau@wisc.edu) (UW-Madison)
+- [Evan Geng](egeng@wisc.edu) (UW-Madison)
+- [Liam Hupfer](lhupfer@wisc.edu) (UW-Madison)
 - [Loris D'Antoni](mailto:loris@cs.wisc.edu) (UW-Madison)
 - [Tom Reps](mailto:reps@cs.wisc.edu) (UW-Madison)
+
