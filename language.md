@@ -167,10 +167,37 @@ This relation forms the head of all the CHCs formed by productions for this non-
 ```
 
 #### Operators, Leaves, and CHC Bodies
-Coming soon.
+Leaves are productions with no child terms:
+```lisp
+(x.Syn (= r x))
+```
+This defines a production that is _syntactically_ `x` (named `x.Syn`) and _semantically_ has the CHC body `(= r x)`.
+Together with the non-terminal's semantic relation, it defines the following CHC:
+```
+\forall et,x,y,r. (= r x) => (E.Sem et x y r)
+```
+
+Operators are the same, except with child terms:
+```lisp
+((+.Syn (E et1) (E et2))
+  (and
+    (E.Sem et1 x y r1)
+    (E.Sem et2 x y r2)
+    (= r (+ r1 r2))))
+```
+This defines a production that is _syntactically_ `E + E` (named `+.Syn`) and _semantically_, along with the non-terminal's
+relation, defines the CHC:
+```
+\forall et,et1,et2,x,y,r,r1,r2. (E.Sem et1 x y r1) ^ (E.Sem et2 x y r2) ^ (= r (+ r1 r2)) => (E.Sem et x y r)
+```
+Note how the semantic relations for the child terms appear in the CHC body.
 
 #### Constraints
-Coming soon.
+Constraints are specified as predicates over the semantic relations of the grammar:
+```lisp
+(constraint (and (E.Sem max2 4 2 4) (E.Sem max2 2 5 5)))
+```
+By defining `max2` as the synthesis objective in the `synth-term` command, we mark it as a single term that must satisfy all constraints.
 
 ### Example: `max2` (Imperative)
 The preceding grammar uses only integer and Boolean expressions, and an equivalent problem could be
