@@ -102,6 +102,76 @@ follows:
 (constraint (and (E.Sem max2 4 2 4) (E.Sem max2 2 5 5)))
 ```
 
+We now examine some of these sections in more detail.
+
+#### Metadata
+SemGuS problems can have optional metadata about the problem itself:
+```lisp
+(metadata :author "Jinwoo Kim")
+(metadata :realizable true)
+```
+Solvers must not use this metadata when solving the synthesis problem; it is intended to be used 
+for automated benchmark suites and other testing tools. 
+
+#### Term Type Declarations
+Abstract data types for terms are declared outside of the grammar for the synthesis problem. These
+are an _external_ representation of a term, e.g., integer-valued expressions, and a specific grammar
+implements terms of various types.
+```lisp
+(declare-term-type E.Term)
+(declare-term-type B.Term)
+```
+Note that the term type feature will be revised and enhanced in a later release.
+
+#### `synth-term`: The Synthesis Objective
+The `synth-term` command defines the term to be synthesized. Note that the solution to a SemGuS problem
+is a term, not a function, because imperative semantics are supported.
+```lisp
+(synth-term max2 E.Term (<...grammar...>))
+```
+A `synth-term` declaration consists of the term name, its term type, and an associated grammar.
+
+#### Grammar Declarations
+All of the variables and non-terminals used in the grammar are declared first.
+```lisp
+  (declare-var (et et1 et2) E.Term)
+  (declare-var (bt bt1 bt2) B.Term)
+
+  (declare-var (x y r r1 r2) Int)
+  (declare-var (rb rb1 rb2) Bool)
+```
+A few notes about these variable declarations:
+* These are purely declarations, not bindings. The variable names are only being associated with a type.
+* Variables are universally quantified over the semantic CHCs, so variables do not store a state across productions.
+* Variables declared here, inside the grammar, are not visible outside the grammar.
+
+```lisp
+  (declare-nt E E.Term (E.Sem (E.Term Int Int Int)))
+  (declare-nt B B.Term (B.Sem (B.Term Int Int Bool)))
+```
+The non-terminal declarations associate a non-terminal name (e.g., `E`) with the type of terms it produces (`E.Term`), as well as a
+semantic relation and signature (`E.Sem`). This relation is used in the semantics for productions, for some term produced by the 
+associated non-terminal. Note that this relation is also visible outside of the grammar and `synth-term` block, and it is used in
+the constraints.
+
+#### Non-terminals and CHC Heads
+After the grammar declarations, the non-terminals and associated productions are defined.
+```lisp
+((E et) (E.Sem et x y r)
+  <...productions...>)
+```
+The non-terminal and associated term variable are first, followed by the semantic relation for this non-terminal.
+This relation forms the head of all the CHCs formed by productions for this non-terminal:
+```
+\forall <...variables...>. <...CHC Body...> => (E.Sem et x y r)
+```
+
+#### Operators, Leaves, and CHC Bodies
+Coming soon.
+
+#### Constraints
+Coming soon.
+
 ### Example: `max2` (Imperative)
 The preceding grammar uses only integer and Boolean expressions, and an equivalent problem could be
 written in SyGuS, assuming standard semantics. However, SemGuS is not limited to only grammars of 
