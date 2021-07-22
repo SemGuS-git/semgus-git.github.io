@@ -17,6 +17,6 @@ Bless is an enumerative Semgus solver for example-based problems. It performs st
 
 ### Benchmarks
 
+Some preliminary SemGuS benchmarks are initially available, including basic examples and regular expression benchmarks.
 
-Links coming soon.
-
+[View SemGuS benchmarks on GitHub.](https://github.com/SemGuS-git/Semgus-Benchmarks) Questions? [Contact Wiley Corning.](mailto:wcorning@wisc.edu)
