@@ -11,7 +11,9 @@
 
 ### Benchmarks and Solvers
 
-Links to benchmarks and solvers for SemGuS problems coming soon.
+Two solvers for SemGuS problems are initially available, as well as example benchmarks.
+
+[Information about Benchmarks and Solvers.](solvers)
 
 ### Publications and Talks
 
