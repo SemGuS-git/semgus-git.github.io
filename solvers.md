@@ -1,7 +1,7 @@
 
 ## SemGuS Solvers and Benchmarks
 
-Two solvers for SemGuS problems are initially available: Messy and WES (provisional).
+Two solvers for SemGuS problems are initially available: Messy and Bless.
 
 ### Messy
 
@@ -9,11 +9,13 @@ Messy is a constraint-based Semgus solver that reduces synthesis into solving a 
 
 
 [View Messy on GitHub.](https://github.com/kjw227/Messy-Release)
+Questions? [Contact Jinwoo Kim.](mailto:pl@cs.wisc.edu)
 
-### WES (provisional)
+### Bless
 
-Links coming soon.
+This is a solver based on bottom-up enumeration. More information coming soon.
 
+Questions? [Contact Wiley Corning.](mailto:wcorning@wisc.edu)
 
 ### Benchmarks
 
