@@ -13,7 +13,7 @@ two arguments. The grammar consists of the following syntax constraints:
 E ::= x | y | 0 | 1 | E + E | if B then E else E
 B ::= true | false | !B | B & B | E < E
 ```
-plus the expected semantics associated with each production. The resultant specification looks as
+Additionally, it contains the semantics associated with each production. The resultant specification looks as
 follows:
 
 ```lisp
@@ -102,7 +102,7 @@ follows:
 (constraint (and (E.Sem max2 4 2 4) (E.Sem max2 2 5 5)))
 ```
 
-We now examine some of these sections in more detail.
+We now examine some of these pieces in more detail.
 
 #### Metadata
 SemGuS problems can have optional metadata about the problem itself:
@@ -125,7 +125,7 @@ Note that the term type feature will be revised and enhanced in a later release.
 
 #### `synth-term`: The Synthesis Objective
 The `synth-term` command defines the term to be synthesized. Note that the solution to a SemGuS problem
-is a term, not a function, because imperative semantics are supported.
+is a term, not a function, as imperative semantics must be supported.
 ```lisp
 (synth-term max2 E.Term (<...grammar...>))
 ```

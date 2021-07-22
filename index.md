@@ -20,7 +20,7 @@ Links to benchmarks and solvers for SemGuS problems coming soon.
 [A 5-minute talk on Semantics-Guided Synthesis.](talks)
 
 
-### Contact us
+### Contact Us
 
 - [Jinwoo Kim](mailto:pl@cs.wisc.edu) (lead) (UW-Madison)
 - [Qinheping Hu](mailto:qhu28@cs.wisc.edu) (UW-Madison)
