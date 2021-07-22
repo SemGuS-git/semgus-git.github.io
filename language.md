@@ -3,7 +3,7 @@
 The SemGuS front-end language format is based on SMT-LIB2 and inspired by SyGuS. It allows specifying
 the grammar of a synthesis problem, semantics for each production, and constraints on the desired program.
 
-[The SemGus Front-End Language v1.0](#) [Document coming soon.]
+[The SemGus Front-End Language v1.0 \[pdf\]](res/semgus-lang.pdf)
 
 ### Example: `max2` (Expressions)
 
