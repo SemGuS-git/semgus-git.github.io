@@ -24,6 +24,10 @@ Two solvers for SemGuS problems are initially available, as well as example benc
 
 ### Contact Us
 
+[Contact Jinwoo Kim with any questions or comments.](mailto:pl@cs.wisc.edu)
+
+### The SemGuS Team
+
 - [Jinwoo Kim](mailto:pl@cs.wisc.edu) (lead) (UW-Madison)
 - [Qinheping Hu](mailto:qhu28@cs.wisc.edu) (UW-Madison)
 - [Wiley Corning](mailto:wcorning@wisc.edu) (UW-Madison)
