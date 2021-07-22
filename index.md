@@ -13,11 +13,12 @@
 
 Links to benchmarks and solvers for SemGuS problems coming soon.
 
-In the meantime, you can read the [paper](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf) or watch the [talks](https://app.clowdr.org/conference/popl2021/item/5b50bd98-0c54-4733-866d-5a81a26a23e9) about SemGuS. 
+### Publications and Talks
 
-<video style="display:block;margin:2rem auto;max-width:90%" controls>
-    <source src="res/short-talk.mp4" type="video/mp4">
-</video>
+[Semantics-Guided Synthesis. Jinwoo Kim, Qinheping Hu, Loris D'Antoni, and Thomas Reps. 2021.](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf)
+
+[A 5-minute talk on Semantics-Guided Synthesis.](talks)
+
 
 ### Contact us
 
