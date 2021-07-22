@@ -13,10 +13,10 @@ Messy is a constraint-based Semgus solver that reduces synthesis into solving a 
 
 Bless is an enumerative Semgus solver for example-based problems. It performs standard bottom-up enumeration of terms in the user's language, optionally incorporating observational equivalence reduction to prune the search space. Bless is packaged with an interpreter for Semgus; we provide a command-line interface for both interpretation and synthesis tasks.
 
-[View Bless on GitHub.](https://github.com/SemGuS-git/Semgus-Interpreter) Questions? [Contact Wiley Corning.](mailto:wcorning@wisc.edu)
+[View Bless on GitHub.](https://github.com/SemGuS-git/Bless-Release) Questions? [Contact Wiley Corning.](mailto:wjlc@wisc.edu)
 
 ### Benchmarks
 
 Some preliminary SemGuS benchmarks are initially available, including basic examples and regular expression benchmarks.
 
-[View SemGuS benchmarks on GitHub.](https://github.com/SemGuS-git/Semgus-Benchmarks) Questions? [Contact Wiley Corning.](mailto:wcorning@wisc.edu)
+[View SemGuS benchmarks on GitHub.](https://github.com/SemGuS-git/Semgus-Benchmarks) Questions? [Contact Wiley Corning.](mailto:wjlc@cs.wisc.edu)

@@ -28,13 +28,13 @@ Two solvers for SemGuS problems are initially available, as well as example benc
 
 ### The SemGuS Team
 
-- [Jinwoo Kim](mailto:pl@cs.wisc.edu) (lead) (UW-Madison)
-- [Qinheping Hu](mailto:qhu28@cs.wisc.edu) (UW-Madison)
-- [Wiley Corning](mailto:wcorning@wisc.edu) (UW-Madison)
-- [Keith Johnson](mailto:keith.johnson@wisc.edu) (UW-Madison)
-- [Julien De Castelnau](decastelnau@wisc.edu) (UW-Madison)
-- [Evan Geng](egeng@wisc.edu) (UW-Madison)
-- [Liam Hupfer](lhupfer@wisc.edu) (UW-Madison)
-- [Loris D'Antoni](mailto:loris@cs.wisc.edu) (UW-Madison)
-- [Tom Reps](mailto:reps@cs.wisc.edu) (UW-Madison)
+- Jinwoo Kim (lead) (UW-Madison)
+- Qinheping Hu (UW-Madison)
+- Wiley Corning (UW-Madison)
+- Keith Johnson (UW-Madison)
+- Julien De Castelnau (UW-Madison)
+- Evan Geng (UW-Madison)
+- Liam Hupfer (UW-Madison)
+- Loris D'Antoni (UW-Madison)
+- Tom Reps (UW-Madison)
 
