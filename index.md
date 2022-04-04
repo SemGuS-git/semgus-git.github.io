@@ -9,6 +9,8 @@
 
 ### [Benchmarks and Solvers](solvers)
 
+### [Tools and Libraries](tools)
+
 ### Publications and Talks
 
 [Semantics-Guided Synthesis. Jinwoo Kim, Qinheping Hu, Loris D'Antoni, and Thomas Reps. 2021.](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf)
