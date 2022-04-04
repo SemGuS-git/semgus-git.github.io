@@ -18,17 +18,16 @@
 
 ### Contact Us
 
-[Contact Jinwoo Kim with any questions or comments.](mailto:pl@cs.wisc.edu)
+[Contact the SemGuS team.](mailto:semgus@office365.wisc.edu)
 
 ### The SemGuS Team
 
 - Jinwoo Kim (lead) (UW-Madison)
-- Qinheping Hu (UW-Madison)
 - Wiley Corning (UW-Madison)
 - Keith Johnson (UW-Madison)
-- Julien De Castelnau (UW-Madison)
 - Evan Geng (UW-Madison)
-- Liam Hupfer (UW-Madison)
+- Kanghee Park (UW-Madison)
+- Anvay Grover (UW-Madison)
 - Loris D'Antoni (UW-Madison)
 - Tom Reps (UW-Madison)
 
