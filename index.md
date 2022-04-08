@@ -13,9 +13,11 @@
 
 ### Publications and Talks
 
-[Semantics-Guided Synthesis. Jinwoo Kim, Qinheping Hu, Loris D'Antoni, and Thomas Reps. 2021.](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf)
+Programmable program synthesis. D'Antoni, L., Hu, Q., Kim, J., and Reps, T.W. 2021. [[PDF]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf)
 
-[A 5-minute talk on Semantics-Guided Synthesis.](talks)
+Semantics-Guided Synthesis. Jinwoo Kim, Qinheping Hu, Loris D'Antoni, and Thomas Reps. 2021. [[PDF]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf)
+
+A 5-minute talk on Semantics-Guided Synthesis. [[Video]](talks)
 
 
 ### Contact Us
