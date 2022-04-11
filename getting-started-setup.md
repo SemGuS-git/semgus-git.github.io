@@ -14,7 +14,8 @@ After downloading and unzipping the release for your platform, add the folder co
 
 ### Compiling from source
 
-The SemGuS parser, enumerative solvers, and CLI are built with .NET Core 6.0 using Visual Studio 2022 (older versions may also be compatible).
+The SemGuS parser, enumerative solvers, and CLI are built with .NET Core 6.0 using Visual Studio 2022. Older versions of Visual Studio may also be compatible.
+
 - If Visual Studio is not available for your platform or you prefer to use other tools, additional configuration may be required to build the project.
 
 To clone our source code from [GitHub](https://github.com/SemGuS-git/Semgus-Operational), run the following commands in your terminal:

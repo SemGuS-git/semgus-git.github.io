@@ -1,6 +1,6 @@
 ## Using the Command-Line Tools
 
-*[Index](getting-started)*
+*[Index](getting-started)*  
 *[Previous](getting-started-setup)*
 
 For our first example, we will synthesize a function to compute the maximum of two integers. We will use a simple expression language consisting of arithmetic and logical operators, along with a ternary operator (i.e., an if-then-else expression).

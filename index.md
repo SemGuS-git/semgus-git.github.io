@@ -7,7 +7,7 @@
 
 ### Resources
 
-[**Getting Started Guide**](getting-started)
+#### [Getting Started Guide](getting-started)
 
 [Tools and Libraries](tools)
 

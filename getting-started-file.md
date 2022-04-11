@@ -1,6 +1,6 @@
 ## Walkthrough of a Semgus File
 
-*[Index](getting-started)*
+*[Index](getting-started)*  
 *[Previous](getting-started-cli)*
 
 In the previous section, we used applied our solvers to a simple Semgus problem: finding an integer expression to compute the maximum of two numbers. We will now explore the contents of this Semgus file, [`max2-exp.sl`](test), to demonstrate the Semgus format.
