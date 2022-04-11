@@ -3,22 +3,23 @@
 
 ## Semantics-Guided Synthesis
 
-*Semantics-guided synthesis* (SemGuS) is a framework for specifying arbitrary synthesis problems. SemGuS allows a user to provide both the syntax and the semantics for the constructs in the language. SemGuS accepts a recursively defined big-step semantics, which allows it, for example, to be used to specify and solve synthesis problems over an imperative programming language that may contain loops with unbounded behavior. The customizable nature of SemGuS also allows synthesis problems to be defined over a non-standard semantics, such as an abstract semantics.
+*Semantics-guided synthesis* (SemGuS) is a framework for specifying arbitrary program synthesis problems. SemGuS allows a user to provide both the syntax and the semantics for the constructs in their language. SemGuS accepts a recursively defined big-step semantics, which allows it, for example, to be used to specify and solve synthesis problems over an imperative programming language that may contain loops with unbounded behavior. The customizable nature of SemGuS also allows synthesis problems to be defined over a non-standard semantics, such as an abstract semantics of the user's choice.
 
-### [SemGuS Format v1.0](language)
+### Resources
 
-### [Benchmarks and Solvers](solvers)
+[**Getting Started Guide**](getting-started)
 
-### [Tools and Libraries](tools)
+[Tools and Libraries](tools)
+
+*The SemGus Front-End Language* v2.0.0 [[PDF]](res/semgus-lang.pdf)
 
 ### Publications and Talks
 
-Programmable program synthesis. D'Antoni, L., Hu, Q., Kim, J., and Reps, T.W. 2021. [[PDF]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf)
+*Programmable program synthesis.* D'Antoni, L., Hu, Q., Kim, J., and Reps, T.W. 2021. [[PDF]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf)
 
-Semantics-Guided Synthesis. Jinwoo Kim, Qinheping Hu, Loris D'Antoni, and Thomas Reps. 2021. [[PDF]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf)
+*Semantics-Guided Synthesis.* Jinwoo Kim, Qinheping Hu, Loris D'Antoni, and Thomas Reps. 2021. [[PDF]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf)
 
 A 5-minute talk on Semantics-Guided Synthesis. [[Video]](talks)
-
 
 ### Contact Us
 
