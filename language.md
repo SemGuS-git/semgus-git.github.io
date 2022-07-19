@@ -187,11 +187,11 @@ loops), we may declare multiple bodies for a single match case.
 
 ```lisp
 (match t_e
-  ($x <x semantic rule>)           ; Leaf term with no children
-  (($+ et1 et2) <+ semantic rule>) ; Operator with two children et1: E, et2: E
-  (($ite bt1 et1 et2)              ; Operator with three children and two semantic rules
-    <if-then-else semantic rule one>
-    <if-then-else semantic rule two>)
+  (($x <x semantic rule>)           ; Leaf term with no children
+   (($+ et1 et2) <+ semantic rule>) ; Operator with two children et1: E, et2: E
+   (($ite bt1 et1 et2)              ; Operator with three children and two semantic rules
+     <if-then-else semantic rule one>
+     <if-then-else semantic rule two>))
   ...)
 ```
 
