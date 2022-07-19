@@ -64,9 +64,9 @@ Finally we can provide a **specification** by giving the name of the function we
 
 ```lisp
 (synth-fun max2() E)
-(constraint (E.Sem max2 4 2 4)) // on input x=4 and y=2, max2 should return 4
-(constraint (E.Sem max2 2 5 5)) // on input x=2 and y=5, max2 should return 5
-(constraint (E.Sem max2 7 1 7)) // on input x=7 and y=1, max2 should return 7
+(constraint (E.Sem max2 4 2 4)) ; on input x=4 and y=2, max2 should return 4
+(constraint (E.Sem max2 2 5 5)) ; on input x=2 and y=5, max2 should return 5
+(constraint (E.Sem max2 7 1 7)) ; on input x=7 and y=1, max2 should return 7
 (check-synth)
 ```
 
