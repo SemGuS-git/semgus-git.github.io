@@ -3,7 +3,7 @@
 The SemGuS front-end language format is based on SMT-LIB2 and inspired by SyGuS. It allows specifying
 the grammar of a synthesis problem, semantics for each production, and constraints on the desired program.
 
-[The SemGus Front-End Language v1.0 \[pdf\]](res/semgus-lang.pdf)
+[The SemGus Front-End Language \[pdf\]](res/semgus-lang.pdf)
 
 ### Example: `max2` (Expressions)
 
@@ -242,18 +242,14 @@ annotations behind it.
 Note that these annotations are strictly optional, and only serve to assist certain solvers that may be
 able to make use of them.
 
-#### Synthesis Objective
+#### Synthesis Objective Specification
 
-The `synth-fun` command gives a name to a term to be synthesized and specifies its term type. Note that
-the solution to a SemGuS problem is a term and not a function, as imperative semantics must be supported.
+The `synth-fun` command gives a name to a term to be synthesized and specifies its term type. This is
+the equivalent of the `synth-fun` command in the SyGuS specification language.
 
 ```lisp
 (synth-fun max2 () E) ; Synthesize a term max2 of term type E
 ```
-
-This is equivalent to the `synth-fun` command from the SyGuS specification language.
-
-#### Constraints
 
 Constraints are specified as predicates over the semantic relations of the grammar. Multiple constraints
 can be asserted by multiple invocations of the `constraint` command. By asserting that `E.Sem` holds for
@@ -277,7 +273,7 @@ It is also possible to define a logical constraint by providing an arbitrary SMT
 
 By defining `max2` as the synthesis objective in the `synth-fun` command, we mark it as a single term
 that must satisfy all constraints we give it. Finally, once we've declared our synthesis objective and
-all the constraints on it, we can use the `check-synth` command to tell the solver to solve the synthesis
+all the constraints on it, we can use the `check-synth` command to ask the solver to solve the synthesis
 problem.
 
 ```lisp
