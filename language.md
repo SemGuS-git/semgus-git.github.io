@@ -29,19 +29,19 @@ looks as follows:
   ((E 0) (B 0))
   
    ;; Syntactic constructors for integer expressions
-  ((($x)                                     ; E -> x
-    ($y)                                     ;    | y
-    ($0)                                     ;    | 0
-    ($1)                                     ;    | 1
-    ($+ ($+_1 E) ($+_2 E))                   ;    | (+ E E)
-    ($ite ($ite_1 B) ($ite_2 E) ($ite_3 E))) ;    | (ite B E E)
+  ((($x)          ; E -> x
+    ($y)          ;    | y
+    ($0)          ;    | 0
+    ($1)          ;    | 1
+    ($+ E E)      ;    | (+ E E)
+    ($ite B E E)) ;    | (ite B E E)
    
    ;; Syntactic constructors for Boolean expressions
-   (($true)                      ; B -> true
-    ($false)                     ;    | false
-    ($not ($not_1 B))            ;    | (not B)
-    ($and ($and_1 B) ($and_2 B)) ;    | (and B B)
-    ($< ($<_1 E) ($<_2 E)))))    ;    | (< E E)
+   (($true)     ; B -> true
+    ($false)    ;    | false
+    ($not B)    ;    | (not B)
+    ($and B B)  ;    | (and B B)
+    ($< E E)))) ;    | (< E E)
 
 ;; Declarations of semantics associated with the syntax defined above
 (define-funs-rec
@@ -150,13 +150,13 @@ Note that the lists of syntactic constructor declarations should be in the same 
 term type declarations.
 
 The syntactic constructors associated with a term type define the possible ways to construct a term of
-that type. Each constructor consists of a name, optionally followed by zero or more child terms and their
-respective term types.
+that type. Each constructor consists of a name, optionally followed by zero or more term types for any
+child terms.
 
 ```lisp
-(($x)                                    ; Leaf term with no children
- ($+ ($+_1 E) ($+_2 E))                  ; Operator with two children of term type E
- ($ite ($ite_1 B) ($ite_2 E) ($ite_3 E)) ; Operator with three children of types B, E, E
+(($x)         ; Leaf term with no children
+ ($+ E E)     ; Operator with two children of term type E
+ ($ite B E E) ; Operator with three children of types B, E, E
  ...) 
 ```
 
@@ -303,25 +303,25 @@ This time, imperative semantics are specified for the `Start` non-terminal's pro
   
    ;; Statements have assigment operators for x and y, as well as an auxiliary variable c
    ;; Additionally, we have conditionals and sequencing (the "semicolon operator")
-  ((($x= ($x=_1 E))                     ; S -> x := E
-    ($y= ($y=_1 E))                     ;    | y := E
-    ($c= ($c=_1 E))                     ;    | c := E
-    ($if ($if_1 B) ($if_2 S) ($if_3 S)) ;    | if B then S else S
-    ($seq ($seq_1 S) ($seq_2 S)))       ;    | S ; S
+  ((($x= E)     ; S -> x := E
+    ($y= E)     ;    | y := E
+    ($c= E)     ;    | c := E
+    ($if B S S) ;    | if B then S else S
+    ($seq S S)) ;    | S ; S
    
-   (($x)                                     ; E -> x
-    ($y)                                     ;    | y
-    ($c)                                     ;    | c
-    ($0)                                     ;    | 0
-    ($1)                                     ;    | 1
-    ($+ ($+_1 E) ($+_2 E))                   ;    | (+ E E)
-    ($ite ($ite_1 B) ($ite_2 E) ($ite_3 E))) ;    | (ite B E E)
+   (($x)           ; E -> x
+    ($y)           ;    | y
+    ($c)           ;    | c
+    ($0)           ;    | 0
+    ($1)           ;    | 1
+    ($+ E E)       ;    | (+ E E)
+    ($ite B E E )) ;    | (ite B E E)
    
-   (($true)                      ; B -> true
-    ($false)                     ;    | false
-    ($not ($not_1 B))            ;    | (not B)
-    ($and ($and_1 B) ($and_2 B)) ;    | (and B B)
-    ($< ($<_1 E) ($<_2 E)))))    ;    | (< E E)
+   (($true)     ; B -> true
+    ($false)    ;    | false
+    ($not B)    ;    | (not B)
+    ($and B B)  ;    | (and B B)
+    ($< E E)))) ;    | (< E E)
 
 (define-funs-rec
   ;; Same x and y as before, but with an auxiliary variable c.
