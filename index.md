@@ -74,11 +74,11 @@ Finally we can provide a **specification** by giving the name of the function we
 
 To learn more about SemGuS, you can watch this [[5-minutes video]](talks), read this [[vision paper]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf), or read the original [[SemGuS paper]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf).
 
-If you want to use existing SemGuS solvers or build your own solvers, here are some helpful links
+If you want to use existing SemGuS solvers or build your own solvers, here are some helpful links:
 - The SemGuS **manual** [[pdf]](res/semgus-lang.pdf)
 - SemGuS **benchmarks** [[link]](https://github.com/SemGuS-git/Semgus-Benchmarks) (Send us new benchmarks!)
 - A SemGuS **parser** [[C# code]](https://github.com/SemGuS-git/Semgus-Parser), [[NuGet]](https://www.nuget.org/packages/Semgus.Parser), [[Java bindings code]](https://github.com/SemGuS-git/Semgus-Java), [[jitpack]](https://jitpack.io/#SemGuS-git/Semgus-Java)
-- CLI with basic SemGuS **solvers** [[link]](getting-started-setup) (Build your solver and let us know you did!)
+- CLI with basic SemGuS **solvers** [[link]](https://github.com/SemGuS-git/Semgus-Operational) (Build your solver and let us know you did!)
 
 
 ### Contact Us 
