@@ -7,7 +7,7 @@
 
 ### The SemGuS format
 
-The SemGus Front-End Language v2.0.0 [[manual]](res/semgus-lang.pdf) provides a unified file format for describing synthesis problems.
+The SemGus Front-End Language [[see manual]](res/semgus-lang.pdf) provides a unified file format for describing synthesis problems.
 
 The first part of a SemGuS file is a *regular tree grammar* that describes the **syntax** language in which we are looking for a program.
 In SemGuS, a grammar is declared as a recursive data type as follows.
