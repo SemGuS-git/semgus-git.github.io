@@ -108,7 +108,7 @@ If you want to use existing SemGuS solvers or build your own solvers, here are s
 - SemGuS **benchmarks** [[link]](https://github.com/SemGuS-git/Semgus-Benchmarks) (Contributions welcome!)
 - A SemGuS **parser** [[C# code]](https://github.com/SemGuS-git/Semgus-Parser), [[NuGet]](https://www.nuget.org/packages/Semgus.Parser), [[Java bindings code]](https://github.com/SemGuS-git/Semgus-Java), [[jitpack]](https://jitpack.io/#SemGuS-git/Semgus-Java)
 - An experimental SemGuS solver based on CHCs [[link]](https://github.com/SemGuS-git/Semgus-Messy)
-- CLI tool with basic SemGuS **solvers** [[link]](https://github.com/SemGuS-git/Semgus-Operational) (Build your solver and let us know you did!)
+- CLI tool with basic SemGuS **solvers** [[link]](https://github.com/kjcjohnson/ks2-mono) (Build your solver and let us know you did!)
 
 
 ### Contact Us 
