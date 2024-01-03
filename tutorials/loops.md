@@ -200,7 +200,7 @@ We want to synthesize a function named `mul` that takes no arguments and returns
 As SemGuS solvers mature, we hope to not need these restrictions in the future!
 
 ### Constraints
-We will use programming-by-example (PBE) constraints, specified as a relation over the initial CHC head with `mul` as the term:
+We will use programming-by-example (PBE) constraints, specified as a relation over the initial CHC head with `mul` as the term.
 ```smt
 (constraint (F.Sem mul 0 0 0))   ; 0 * 0 = 0
 (constraint (F.Sem mul 1 1 1))   ; 1 * 1 = 1
@@ -209,6 +209,7 @@ We will use programming-by-example (PBE) constraints, specified as a relation ov
 (constraint (F.Sem mul 5 3 15))  ; 5 * 3 = 15
 (constraint (F.Sem mul 3 4 12))  ; 3 * 4 = 12
 ```
+ These examples show that we are looking for a program that will multiply `x` and `y`. More specifically, these constraints state that we are looking for a value of the term `mul` such that the relation `(F.Sem mul x y o)` is true for all `x`, `y`, and `o` such that `o = x*y`, with specific examples of `x`, `y`, and `o` given as constraints.
 
 ### Synthesizing
 The final command in a SemGuS file is the `check-synth` command, which tells the solver to find the solution!
