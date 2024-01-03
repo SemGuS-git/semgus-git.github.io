@@ -353,7 +353,7 @@ This is the program we were looking for. Nice!
                           (= out (- o1 o2)))))))
         :input (xi yi ri) :output (out))
 
-     ; Bool epressions
+     ; Bool expressions
      (! (match t
                ((($< t1 t2)
                  (exists ((o1 Int) (o2 Int))
