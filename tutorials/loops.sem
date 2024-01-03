@@ -1,0 +1,154 @@
+;;;;
+;;;; loops.sem - multiply via a loop
+;;;;
+
+;;;
+;;; Term types
+;;;
+(declare-term-types
+ ;; Nonterminals
+ ((F 0) (S 0) (E 0) (B 0))
+ 
+;; Productions
+ ((($function S E))  ; F
+  (($x<- E)          ; S
+   ($y<- E)
+   ($r<- E)         
+   ($while B S)
+   ($seq S S)
+   ($noop))
+  (($r)              ; E
+   ($0)
+   ($1)
+   ($x)
+   ($y)
+   ($+ E E)
+   ($- E E))
+  (($< E E))))       ; B
+
+;;;
+;;; Semantics
+;;;
+(define-funs-rec
+    ;; CHC heads
+    ((F.Sem ((t F) (x Int) (y Int) (ret Int)) Bool)
+     (S.Sem ((t S) (xi Int) (yi Int) (ri Int) (xo Int) (yo Int) (ro Int)) Bool)
+     (E.Sem ((t E) (xi Int) (yi Int) (ri Int) (out Int)) Bool)
+     (B.Sem ((t B) (xi Int) (yi Int) (ri Int) (out Bool)) Bool))
+    
+    ;; Bodies
+    ((! (match t
+               ((($function tbody treturn)
+                 (exists ((xo Int) (yo Int) (ro Int))
+                         (and
+                          (S.Sem tbody x y 0 xo yo ro)
+                          (E.Sem treturn xo yo ro ret))))))
+        :input (x y) :output (ret))
+    
+    ; Statements
+     (! (match t
+               ((($x<- te)
+                 (exists ((out Int))
+                         (and
+                          (E.Sem te xi yi ri out)
+                          (= xo out)
+                          (= yo yi)
+                          (= ro ri))))
+                (($y<- te)
+                 (exists ((out Int))
+                         (and
+                          (E.Sem te xi yi ri out)
+                          (= xo xi)
+                          (= yo out)
+                          (= ro ri))))
+                (($r<- te)
+                 (exists ((out Int))
+                         (and
+                          (E.Sem te xi yi ri out)
+                          (= xo xi)
+                          (= yo yi)
+                          (= ro out))))
+                
+                (($seq t1 t2)
+                 (exists ((x1 Int) (y1 Int) (r1 Int))
+                         (and
+                          (S.Sem t1 xi yi ri x1 y1 r1)
+                          (S.Sem t2 x1 y1 r1 xo yo ro))))
+                (($noop)
+                 (and
+                  (= xi xo)
+                  (= yi yo)
+                  (= ri ro)))
+                (($while tb ts)
+                 (exists ((b Bool) (x1 Int) (y1 Int) (r1 Int))
+                         (and
+                          (B.Sem tb xi yi ri b) 
+                          (= b true)
+                          (S.Sem ts xi yi ri x1 y1 r1)
+                          (S.Sem t x1 y1 r1 xo yo ro)))
+                 (exists ((b Bool))
+                         (and 
+                          (B.Sem tb xi yi ri b)
+                          (= b false)
+                          (= xo xi) (= yo yi) (= ro ri))))))
+        :input (xi yi ri) :output (xo yo ro))
+     
+     ; Int expressions
+     (! (match t
+               (($0 (= out 0))
+                ($1 (= out 1))
+                ($x (= out xi))
+                ($y (= out yi))
+                ($r (= out ri))
+                (($+ t1 t2)
+                 (exists ((o1 Int) (o2 Int))
+                         (and
+                          (E.Sem t1 xi yi ri o1)
+                          (E.Sem t2 xi yi ri o2)
+                          (= out (+ o1 o2)))))
+                (($- t1 t2)
+                 (exists ((o1 Int) (o2 Int))
+                         (and
+                          (E.Sem t1 xi yi ri o1)
+                          (E.Sem t2 xi yi ri o2)
+                          (= out (- o1 o2)))))))
+        :input (xi yi ri) :output (out))
+
+     ; Bool epressions
+     (! (match t
+               ((($< t1 t2)
+                 (exists ((o1 Int) (o2 Int))
+                         (and
+                          (E.Sem t1 xi yi ri o1)
+                          (E.Sem t2 xi yi ri o2)
+                          (= out (< o1 o2)))))))
+        :input (xi yi ri) :output (out))))
+
+;;;
+;;; Function to synthesize - a term rooted at F
+;;;
+
+(synth-fun mul () F
+           ((F F) (Loop S) (Seq S) (Inner S) (Op E) (Val E) (B B))
+           ((F F (($function Loop Val)))
+            (Loop S (($while B Seq)))
+            (Seq S (($seq Inner Seq) Inner))
+            (Inner S (($x<- Op) ($y<- Op) ($r<- Op)))
+            (Op E (($+ Val Val) ($- Val Val) Val))
+            (Val E ($0 $1 $x $y $r))
+            (B B (($< Val Val)))))
+
+;;;
+;;; Constraints - examples
+;;;
+(constraint (F.Sem mul 0 0 0))
+(constraint (F.Sem mul 1 1 1))
+(constraint (F.Sem mul 2 2 4))
+(constraint (F.Sem mul 3 3 9))
+(constraint (F.Sem mul 5 3 15))
+(constraint (F.Sem mul 3 4 12))
+
+;;;
+;;; Instruct the solver to find swap
+;;;
+(check-synth)
