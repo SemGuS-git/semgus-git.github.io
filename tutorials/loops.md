@@ -48,7 +48,7 @@ fn(x,y) {
 
 To encode this universe of terms in a SemGuS file, we use the `declare-term-types` command, which is similar to the `declare-datatypes` command native to SMT-LIB2. Each non-terminal
 maps to an algebraic datatype, and each production maps to a constructor for the given datatype. The grammar above, when converted to the SemGuS format, looks like:
-```lisp
+```smt
 (declare-term-types
  ;; Nonterminals
  ((F 0) (S 0) (E 0) (B 0))
@@ -74,7 +74,7 @@ By convention, term type constructors are prefixed with `$`, simply to
 reduce namespace collisions; however, this is not required. The two 
 example programs can thus be expressed as SMT expressions constructing a
 tree of term types:
-```lisp
+```smt
 ; Sum x and y
 ($function $noop ($+ $x $y))
 
@@ -92,7 +92,7 @@ So far, we have specified the *syntax* of a program we could synthesize, but not
 productions with semantic meaning ourselves. 
 
 In the SemGuS format, CHCs are encoded as `match` expressions over term types, with each CHC head getting a separate function. Each CHC head corresponds to a unique non-terminal, but a given non-terminal may have many CHC heads, depending on the desired problem semantics. The CHC head's signature contains the term being matched, the input tuple, and the output tuple. The outline of our example grammar's semantics looks like:
-```lisp
+```smt
 (define-funs-rec
     ;; CHC heads
     ((F.Sem ((t F) (x Int) (y Int) (ret Int)) Bool)
@@ -121,11 +121,11 @@ Our example grammar is interpreted with standard semantics as expected; however,
 the remaining productions return a single expression value.
 
 **The Expression Productions.** Each expression production follows the same form of calling the semantics for child productions (if any) and then returning the output of the expression function. For example, `$r` is simply:
-```lisp
+```smt
 ($r (= out ri)) ; <-- Set the output variable to r from the input tuple
 ```
 and `$<` is:
-```lisp
+```smt
 (($< t1 t2)
  (exists ((o1 Int) (o2 Int))
     (and
@@ -135,7 +135,7 @@ and `$<` is:
 ```
 
 **The Function Production.** The `$function` production handles converting between the desired functional semantics of the program and the internal imperative nature of the program. It creates an initial input state tuple `(x, y, 0)` and passes it to the `S` child, and then passes the output `(xo, yo, ro)` of `S` to the return expression `E` for a final output value. Encoded in SemGuS, this is a match:
-```lisp
+```smt
 (($function tbody treturn)
  (exists ((xo Int) (yo Int) (ro Int))
     (and
@@ -144,7 +144,7 @@ and `$<` is:
 ```
 
 **The Assignment Productions.** The assignment productions (e.g., `$r<-`) simply update the output state with the new value of the given variable and pass the rest through. For assigning, e.g., `r`, this looks like:
-```lisp
+```smt
 (($r<- te)
 (exists ((out Int))
    (and
@@ -155,7 +155,7 @@ and `$<` is:
 ```
 
 **The Loop Production.** The `$while` loop production has two separate CHCs: one for the base case (`B` evaluates to false), and one for the recursive case (`B` evaluates to true and the body runs again). Both cases are encoded as two alternatives for the `$while` production:
-```lisp
+```smt
 (($while tb ts)
  ; Recursive case
  (exists ((b Bool) (x1 Int) (y1 Int) (r1 Int))
@@ -176,7 +176,7 @@ and `$<` is:
 
 ### The Synthesis Task
 Similar to SyGuS, we use the `synth-fun` task to declare what we are attempting to synthesize. However, the SemGuS `synth-fun` specifies the *term* to be synthesized (as a datatype tree). Here, the basic form is:
-```lisp
+```smt
 (synth-fun mul () F)
 ```
 We want to synthesize a function named `mul` that takes no arguments and returns a value of type `F`; that is, a tree of terms rooted at the non-terminal `F`. This declaration can optionally be augmented with a further-restricted grammar, in the same format as in SyGuS. In this case, we massage the grammar a little to make synthesis more tractable by:
@@ -186,7 +186,7 @@ We want to synthesize a function named `mul` that takes no arguments and returns
 * not allowing `$+` and `$-` to recurse
 * forcing a loop at the top-level of the function body
 
-```lisp
+```smt
 (synth-fun mul () F
            ((F F) (Loop S) (Seq S) (Inner S) (Op E) (Val E) (B B))
            ((F F (($function Loop Val)))
@@ -201,7 +201,7 @@ As SemGuS solvers mature, we hope to not need these restrictions in the future!
 
 ### Constraints
 We will use programming-by-example (PBE) constraints, specified as a relation over the initial CHC head with `mul` as the term:
-```lisp
+```smt
 (constraint (F.Sem mul 0 0 0))   ; 0 * 0 = 0
 (constraint (F.Sem mul 1 1 1))   ; 1 * 1 = 1
 (constraint (F.Sem mul 2 2 4))   ; 2 * 2 = 4
@@ -212,7 +212,7 @@ We will use programming-by-example (PBE) constraints, specified as a relation ov
 
 ### Synthesizing
 The final command in a SemGuS file is the `check-synth` command, which tells the solver to find the solution!
-```lisp
+```smt
 (check-synth)
 ```
 
@@ -235,7 +235,7 @@ This is the program we were looking for. Nice!
 ### Full Example SemGuS File
 [Download the full example here.](loops.sem)
 
-```lisp
+```smt
 ;;;;
 ;;;; loops.sem - multiply via a loop
 ;;;;
