@@ -97,19 +97,23 @@ Finally, we can provide a **specification** by giving the name of the function w
 (check-synth)
 ```
 
-### Resources
+### The SemGuS Toolkit
+
+The SemGuS Toolkit is a set of tools and resources for SemGuS. It contains:
+- The SemGuS **format specification** [[pdf]](res/semgus-lang.pdf)
+- SemGuS **benchmarks** [[link]](https://github.com/SemGuS-git/Semgus-Benchmarks) (Contributions welcome!)
+- A SemGuS **parser** [[C# code]](https://github.com/SemGuS-git/Semgus-Parser), [[NuGet]](https://www.nuget.org/packages/Semgus.Parser), [[Java bindings code]](https://github.com/SemGuS-git/Semgus-Java), [[jitpack]](https://jitpack.io/#SemGuS-git/Semgus-Java)
+- `ks2`, a CLI tool with basic SemGuS **solvers** [[link]](https://github.com/kjcjohnson/ks2-mono)
+
+Build your own solver and let us know you did!
+
+### Additional Resources
 
 For a more complete guide to the SemGuS front-end format, see the [[SemGuS Language]](/language) page.
 
 To learn more about SemGuS, you can watch this [[5-minute talk]](talks), read the [[vision paper]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf), or read the original [[SemGuS paper]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf).
 
-If you want to use existing SemGuS solvers or build your own solvers, here are some helpful links:
-- The SemGuS **format specification** [[pdf]](res/semgus-lang.pdf)
-- SemGuS **benchmarks** [[link]](https://github.com/SemGuS-git/Semgus-Benchmarks) (Contributions welcome!)
-- A SemGuS **parser** [[C# code]](https://github.com/SemGuS-git/Semgus-Parser), [[NuGet]](https://www.nuget.org/packages/Semgus.Parser), [[Java bindings code]](https://github.com/SemGuS-git/Semgus-Java), [[jitpack]](https://jitpack.io/#SemGuS-git/Semgus-Java)
-- An experimental SemGuS solver based on CHCs [[link]](https://github.com/SemGuS-git/Semgus-Messy)
-- CLI tool with basic SemGuS **solvers** [[link]](https://github.com/kjcjohnson/ks2-mono) (Build your solver and let us know you did!)
-
+For Messy, an experimental SemGuS solver based on CHCs, visit it on [[GitHub]](https://github.com/SemGuS-git/Semgus-Messy).
 
 ### Contact Us 
 Contact the SemGuS team at this [email](mailto:semgus@office365.wisc.edu).
