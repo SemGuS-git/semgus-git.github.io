@@ -114,14 +114,9 @@ If you want to use existing SemGuS solvers or build your own solvers, here are s
 ### Contact Us 
 Contact the SemGuS team at this [email](mailto:semgus@office365.wisc.edu).
 
-- Jinwoo Kim (lead) (UW-Madison)
-- Wiley Corning (UW-Madison)
 - Keith Johnson (UW-Madison)
-- Evan Geng (UW-Madison)
-- Kanghee Park (UW-Madison)
-- Anvay Grover (UW-Madison)
-- Boying Li (UW-Madison)
-- Jack Xu (UW-Madison)
+- Charlie Murphy (UW-Madison)
+- Rahul Krishnan (UW-Madison)
 - Tom Reps (UW-Madison)
-- [Loris D'Antoni](https://pages.cs.wisc.edu/~loris/) (UW-Madison)
+- [Loris D'Antoni](https://cseweb.ucsd.edu/~ldantoni/) (UCSD)
 
