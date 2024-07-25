@@ -101,7 +101,7 @@ Finally, we can provide a **specification** by giving the name of the function w
 
 For a more complete guide to the SemGuS front-end format, see the [[SemGuS Language]](/language) page.
 
-To learn more about SemGuS, you can watch this [[5-minute talk]](talks), read the [[vision paper]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf), or read the original [[SemGuS paper]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf).
+To learn more about SemGuS, you can watch this [[5-minute talk]](talks), read the [[vision paper]](https://cseweb.ucsd.edu/~ldantoni/papers/cav21-keynote.pdf), or read the original [[SemGuS paper]](https://cseweb.ucsd.edu/~ldantoni/papers/popl21.pdf).
 
 If you want to use existing SemGuS solvers or build your own solvers, here are some helpful links:
 - The SemGuS **format specification** [[pdf]](res/semgus-lang.pdf)
