@@ -116,6 +116,7 @@ Contact the SemGuS team at this [email](mailto:semgus@office365.wisc.edu).
 
 - Keith Johnson (UW-Madison)
 - Charlie Murphy (UW-Madison)
+- Jinwoo Kim (UW-Madison)
 - Rahul Krishnan (UW-Madison)
 - Tom Reps (UW-Madison)
 - [Loris D'Antoni](https://cseweb.ucsd.edu/~ldantoni/) (UCSD)
