@@ -111,21 +111,17 @@ Build your own solver and let us know you did!
 
 For a more complete guide to the SemGuS front-end format, see the [[SemGuS Language]](/language) page.
 
-To learn more about SemGuS, you can watch this [[5-minute talk]](talks), read the [[vision paper]](https://pages.cs.wisc.edu/~loris/papers/cav21-keynote.pdf), or read the original [[SemGuS paper]](https://pages.cs.wisc.edu/~loris/papers/popl21.pdf).
+To learn more about SemGuS, you can watch this [[5-minute talk]](talks), read the [[vision paper]](https://cseweb.ucsd.edu/~ldantoni/papers/cav21-keynote.pdf), or read the original [[SemGuS paper]](https://cseweb.ucsd.edu/~ldantoni/papers/popl21.pdf).
 
 For Messy, an experimental SemGuS solver based on CHCs, visit it on [[GitHub]](https://github.com/SemGuS-git/Semgus-Messy).
 
 ### Contact Us 
 Contact the SemGuS team at this [email](mailto:semgus@office365.wisc.edu).
 
-- Jinwoo Kim (lead) (UW-Madison)
-- Wiley Corning (UW-Madison)
 - Keith Johnson (UW-Madison)
-- Evan Geng (UW-Madison)
-- Kanghee Park (UW-Madison)
-- Anvay Grover (UW-Madison)
-- Boying Li (UW-Madison)
-- Jack Xu (UW-Madison)
+- Charlie Murphy (UW-Madison)
+- Jinwoo Kim (UW-Madison)
+- Rahul Krishnan (UW-Madison)
 - Tom Reps (UW-Madison)
-- [Loris D'Antoni](https://pages.cs.wisc.edu/~loris/) (UW-Madison)
+- [Loris D'Antoni](https://cseweb.ucsd.edu/~ldantoni/) (UCSD)
 
